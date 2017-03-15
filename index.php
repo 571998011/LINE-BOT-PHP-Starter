@@ -1,6 +1,6 @@
 <?php
 $access_token = 'tYO69OAFrf1t8TOcRLmVCjqdaMLx3fMXgm4YGlvANWE56EjBjolij67ND422KmII/IXz+YfqhRg9+0vfIHiMsgYsUeHy0H5O6mxOiKbXmXRc3QMfBN2a57IVy/kfJDpT2aWNRtTJ3qMrkQvHcAkb0wdB04t89/1O/w1cDnyilFU=';
-$access_token2 = 'http://api.wunderground.com/api/Your_Key/conditions/q/CA/San_Francisco.json';
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -17,10 +17,25 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = [
+			/*$messages = [
 				'type' => 'temp_f',
 				'temp_f' => $temp_f
-			];
+			];*/
+			if($text_ex[0] == "yass"){ //ถ้าข้อความคือ "อยากรู้" ให้ทำการดึงข้อมูลจาก Wikipedia หาจากไทยก่อน
+            //https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=PHP
+            $ch1 = curl_init();
+            curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch1, CURLOPT_URL, 'http://api.wunderground.com/api/Your_Key/conditions/q/CA/San_Francisco.json'.$text_ex[1]);
+            $result1 = curl_exec($ch1);
+            curl_close($ch1);
+            
+            $obj = json_decode($result1, true);
+            
+            foreach($obj['query']['pages'] as $key => $val){
+
+                $result_text = $val['extract'];
+            }
 			
 
 			// Make a POST Request to Messaging API to reply to sender
