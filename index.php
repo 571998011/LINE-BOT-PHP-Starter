@@ -12,6 +12,14 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			//$event = {"text":"yass"}
+			 $ch1 = curl_init();
+            curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch1, CURLOPT_URL, 'https://th.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_ex[1]);
+            $result1 = curl_exec($ch1);
+            curl_close($ch1);
+            
+            $obj = json_decode($result1, true);
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -27,8 +35,8 @@ if (!is_null($events['events'])) {
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
-			$data="aa";
-			$post = json_encode($data);
+			
+			$post = json_encode($obj);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
