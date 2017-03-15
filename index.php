@@ -1,6 +1,6 @@
 <?php
 $access_token = 'tYO69OAFrf1t8TOcRLmVCjqdaMLx3fMXgm4YGlvANWE56EjBjolij67ND422KmII/IXz+YfqhRg9+0vfIHiMsgYsUeHy0H5O6mxOiKbXmXRc3QMfBN2a57IVy/kfJDpT2aWNRtTJ3qMrkQvHcAkb0wdB04t89/1O/w1cDnyilFU=';
-
+$access_token2 = 'http://api.wunderground.com/api/Your_Key/conditions/q/CA/San_Francisco.json';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -17,13 +17,11 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			/*$messages = [
-				'type' => 'text',
-				'text' => $text
-			];*/
 			$messages = [
-				'type'=> 'http://api.wunderground.com/api/95287c04f936abda/forecast10day/q/TH/nonthaburi.json'
-				];
+				'type' => 'temp_f',
+				'temp_f' => $temp_f
+			];
+			
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
