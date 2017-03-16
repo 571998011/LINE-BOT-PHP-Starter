@@ -60,8 +60,8 @@ if (!is_null($events['events'])) {
 				'.addtype' =>'text',
 				'.addtext' => $value.$value1,
 				'.addtype' => 'image',
-				'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
-				'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
+				'.addoriginalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
+				'.addpreviewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
