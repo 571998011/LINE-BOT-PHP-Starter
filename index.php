@@ -31,9 +31,10 @@ if (pg_num_rows($result) >= 0) {
         echo $row1[0];
 	    $value1 = "อุณหภูมิ: ".$row1[0]." C"."\n"."สภาพอากาศ: ".$row1[1]."\n"."ความกดอากาศ: ".$row1[2]." pha";
     }
-		$row3 = pg_fetch_array($result3);
+		while($row3 = pg_fetch_array($result3)){
 		echo pg_unescape_bytea($row3[0]);
 		$value2 = $row3[0];
+		}
 } else {
     echo "0 results";
 }
