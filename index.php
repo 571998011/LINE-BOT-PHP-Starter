@@ -8,19 +8,9 @@ $to = $jsonObj->{"result"}[0]->{"content"}->{"from"};
 $text = $jsonObj->{"result"}[0]->{"content"}->{"text"};
 $text_ex = explode(':', $text);
 // Validate parsed JSON data
-if($text_ex[0] == "อยากรู้"){
-    $ch1 = curl_init();
-    curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch1, CURLOPT_URL, 'http://api.wunderground.com/api/Your_Key/conditions/q/CA/San_Francisco.json'.$text_ex[1]);
-    $result1 = curl_exec($ch1);
-    curl_close($ch1);
-    
-    $obj = json_decode($result1, true);
-    
-    foreach($obj['query']['pages'] as $key => $val){
-        
-        $result_text = $val['extract'];
-    }
-}
+if($text == 'บอกมา'){//คำอื่นๆ ที่ต้องการให้ Bot ตอบกลับเมื่อโพสคำนี้มา เช่นโพสว่า บอกมา ให้ตอบว่า ความลับนะ
+            $response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"ความลับนะ"];
+        }else{//นอกนั้นให้โพส สวัสดี
+            $response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"สวัสดี"];
+        }
 echo "OK";
