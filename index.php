@@ -62,12 +62,7 @@ if (!is_null($events['events'])) {
 				];
 			
 			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages],
-			];
-			$post = json_encode($data);
+			
 			
 			/////////////////////////////////
 			
@@ -78,6 +73,13 @@ if (!is_null($events['events'])) {
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$post = json_encode($data);
+			
 			$data1 = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages1],
@@ -91,6 +93,9 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			//curl_setopt($ch, CURLOPT_URL, 'http://api.wunderground.com/api/95287c04f936abda/forecast10day/q/TH/nonthaburi.json'.$text);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post1);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
