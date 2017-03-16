@@ -1,26 +1,30 @@
 <?php
 $access_token = 'tYO69OAFrf1t8TOcRLmVCjqdaMLx3fMXgm4YGlvANWE56EjBjolij67ND422KmII/IXz+YfqhRg9+0vfIHiMsgYsUeHy0H5O6mxOiKbXmXRc3QMfBN2a57IVy/kfJDpT2aWNRtTJ3qMrkQvHcAkb0wdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
-$servername = "ec2-54-243-214-198.compute-1.amazonaws.com";
-$username = "fxujqiwvxjhugr";
-$password = "7eb01f27f07a9bb76a450401c6322a5671325458ba787719ace0d7df498caf36";
+$host = "ec2-54-243-214-198.compute-1.amazonaws.com";
+$port = "5432";
+$credentials = "fxujqiwvxjhugr 7eb01f27f07a9bb76a450401c6322a5671325458ba787719ace0d7df498caf36";
 $dbname = "d8hsko3c4c4lhj";
-$conn = pg_connect($servername, $username, $password, $dbname);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-$sql = "SELECT * FROM weather";
-$result1 = mysqli_query($conn, $sql);
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result1)) {
-        echo "temp: " . $row["temp"]."<br>";
-    }
-} else {
-    echo "0 results";
-}
+$db = pg_connect( "$host $port $dbname $credentials"  );
+if (!$db) {
+    echo "Error : Unable to open database\n";
+   } else {
+      echo "Opened database successfully\n";
+   }
+   $sql =<<<EOF
+      SELECT * from weather;
+EOF;
 
-mysqli_close($conn);
+   $ret = pg_query($db, $sql);
+   if(!$ret){
+      echo pg_last_error($db);
+      exit;
+   } 
+   while($row = pg_fetch_row($ret)){
+      echo "temp = ". $row[0] . "\n";
+   }
+   echo "Operation done successfully\n";
+   pg_close($db);
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
@@ -37,7 +41,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "A\nH\nhhhhhhhhhhhhhhhhhh"
+				'text' => $result1
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
