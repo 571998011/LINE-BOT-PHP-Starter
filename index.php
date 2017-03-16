@@ -17,7 +17,7 @@ $sql2 = "SELECT temp,weathers,pressure FROM server ORDER BY no DESC LIMIT 1;";
 $result2 = pg_query($conn, $sql2);
 
 
-$sql3 = "SELECT c2image FROM phonebook WHERE lastname='test';";
+$sql3 = "SELECT c2image FROM phonebook;";
 $result3 = pg_query($conn, $sql3);
 header("Content-type: image/jpg");
 
