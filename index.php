@@ -20,15 +20,9 @@ if (pg_num_rows($result) >= 0) {
     while($row = pg_fetch_row($result)) {
         echo $row[0];
 	    $value = $row[0];
-    }
-} else {
-    echo "0 results";
-}
-if (pg_num_rows($result1) >= 0) {
-    // output data of each row
-    while($row = pg_fetch_row($result1)) {
-        echo $row[0];
-	    $value = $row[0];
+    }while($row1 = pg_fetch_row($result1)) {
+        echo $row1[0];
+	    $value += $row1[0];
     }
 } else {
     echo "0 results";
