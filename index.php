@@ -30,9 +30,9 @@ if (pg_num_rows($result) >= 0) {
 	    $value1 = "อุณหภูมิ: ".$row1[0]." C"."\n"."สภาพอากาศ: ".$row1[1]."\n"."ความกดอากาศ: ".$row1[2]." pha";
     }
 	while($row3 = pg_fetch_row($result3)) {
-		$Type=$row3['lastname'];
-        echo $row3['c2image'];
-	    $value2 = $row3['c2image'];
+		$Type=$row3["lastname"];
+        echo $row3["c2image"];
+	    $value2 = $row3["c2image"];
     }
 } else {
     echo "0 results";
