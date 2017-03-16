@@ -20,9 +20,9 @@ $result2 = pg_query($conn, $sql2);
 $sql3 = "SELECT c2image FROM phonebook WHERE lastname='test';";
 $result3 = pg_query($conn, $sql3);
 header("Content-type: image/jpg");
-$row2 = pg_fetch_row($result3);
+/*$row2 = pg_fetch_row($result3);
 echo pg_unescape_bytea($row2[0]);
-$value2 = $row2[0];
+$value2 = $row2[0];*/
 
 if (pg_num_rows($result) >= 0) {
     // output data of each row
@@ -33,6 +33,10 @@ if (pg_num_rows($result) >= 0) {
 	while($row1 = pg_fetch_row($result2)) {
         echo $row1[0];
 	    $value1 = "อุณหภูมิ: ".$row1[0]." C"."\n"."สภาพอากาศ: ".$row1[1]."\n"."ความกดอากาศ: ".$row1[2]." pha";
+    }
+	while($row1 = pg_fetch_row($result3)) {
+        echo pg_unescape_bytea($row2[0]);
+	    $value2 = $row2[0];
     }
 	
 } else {
@@ -58,7 +62,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'image',
-				'image' => $value.$vale1
+				'image' => $value2
 				
 			];
 			
