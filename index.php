@@ -57,8 +57,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			$messages = [
-				'.addtype' =>'text',
-				'.addtext' => $value.$value1,
+				'type' =>'text',
+				'text' => $value.$value1,
 				'.addtype' => 'image',
 				'.addoriginalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
 				'.addpreviewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
