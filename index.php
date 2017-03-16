@@ -49,6 +49,8 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
+		'type' => 'image',
+		'image' => $value2
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
@@ -59,11 +61,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'text',
 				'text' => $value.$value1	
-			],
-			$messages2 = [
-				'type' => 'image',
-				'image' => $value2
-				];
+			];
 
 			
 			// Make a POST Request to Messaging API to reply to sender
@@ -71,7 +69,6 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
-				'messages2' => [$messages2],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
