@@ -9,21 +9,15 @@ $conn = pg_connect("host='ec2-54-235-181-120.compute-1.amazonaws.com' port='5432
 // Check connection
 $value = "";
 
-$sql = "ความชื้นของดิน"." SELECT humidity_value FROM hardware_info ORDER BY datetime DESC LIMIT 1;."\n"";
+$sql = "ความชื้นของดิน"." SELECT humidity_value FROM hardware_info ORDER BY datetime DESC LIMIT 1;";
 $result = pg_query($conn, $sql);
 
-$sql1 = "ความชื้นของดิน"." SELECT temp,weathers,pressure FROM server ORDER BY no DESC LIMIT 1;";
-$result1 = pg_query($conn, $sql1);
 
 if (pg_num_rows($result) >= 0) {
     // output data of each row
     while($row = pg_fetch_row($result)) {
         echo $row[0];
 	    $value = $row[0];
-    }while($row1 = pg_fetch_row($result1)) {
-        echo $row1[0];
-	    $value += $row1[0];
-    }
 } else {
     echo "0 results";
 }
