@@ -61,31 +61,11 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $value.$value1	
 			];
-
-			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
-			];
-			if ($event1['type'] == 'message1' && $event1['message1']['type'] == 'image') {
-			// Get text sent
-			$text1 = $event1['message1']['image'];
-			// Get replyToken
-			$replyToken1 = $event1['replyToken1'];
-			// Build message to reply back
-			$messages1 = [
-				'type' => 'image',
-				'image' => $value2
-			];
-
-			
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken1' => $replyToken1,
-				'messages1' => [$messages1],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
