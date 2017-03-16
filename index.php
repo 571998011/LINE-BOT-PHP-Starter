@@ -18,11 +18,11 @@ if (pg_num_rows($result) >= 0) {
     // output data of each row
     while($row = pg_fetch_row($result)) {
         echo $row[0];
-	    $value = $row[0];
+	    $value = "ความชื้นในดิน: ".$row[0];
     }
 	while($row1 = pg_fetch_row($result2)) {
         echo $row1[0];
-	    $value1 = $row1[0].$row1[1].$row1[2];
+	    $value1 = "อุณหภูมิ: ".$row1[0]."สภาพอากาศ: ".$row1[1]."ความกดอากาศ: ".$row1[2];
     }
 } else {
     echo "0 results";
