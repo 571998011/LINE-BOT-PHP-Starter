@@ -1,5 +1,5 @@
 <?php
-$access_token = 'tYO69OAFrf1t8TOcRLmVCjqdaMLx3fMXgm4YGlvANWE56EjBjolij67ND422KmII/IXz+YfqhRg9+0vfIHiMsgYsUeHy0H5O6mxOiKbXmXRc3QMfBN2a57IVy/kfJDpT2aWNRtTJ3qMrkQvHcAkb0wdB04t89/1O/w1cDnyilFU=';
+$access_token = 'eiNztfX7pXhIgh/y96Jvn3HXlRmlL6NXLKZFfcrU1VI0dosq1myI5wwHCb+2mF9Dwge1w1kgbHyh6E48obVtGgukb5DHP/DtGAEFx1k+JHJZIs9vvuRNyYN0mEDW/YjT1oFm0R2q81d4eYsIP4R5VgdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
 $servername = "ec2-54-243-214-198.compute-1.amazonaws.com";
 $username = "fxujqiwvxjhugr";
@@ -10,10 +10,10 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $sql = "SELECT * FROM lukphorkhunmengrai";
-$result = mysqli_query($conn, $sql);
+$result1 = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
+    while($row = mysqli_fetch_assoc($result1)) {
         echo "id: " . $row["id"]."<br>";
     }
 } else {
@@ -37,7 +37,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "ss\nss\nss"
+				'text' => $result1
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
