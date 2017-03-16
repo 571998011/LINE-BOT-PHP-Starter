@@ -18,6 +18,7 @@ if (pg_num_rows($result) >= 0) {
     while($row = pg_fetch_row($result)) {
         echo $row[0];
 	    $value = $row[0];
+    }
 } else {
     echo "0 results";
 }
