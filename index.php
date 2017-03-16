@@ -58,7 +58,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'image',
-				'image' => $value2
+				'image' => $value.$vale1
 				
 			];
 			
