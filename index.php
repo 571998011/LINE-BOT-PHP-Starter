@@ -9,7 +9,7 @@ $conn = pg_connect("host='ec2-54-235-181-120.compute-1.amazonaws.com' port='5432
 // Check connection
 $value = "";
 $value1 = "";
-$value2 => 'image'
+$value2 = "";
 
 $sql = "SELECT humidity_value FROM hardware_info ORDER BY datetime DESC LIMIT 1;";
 $result = pg_query($conn, $sql);
@@ -57,8 +57,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			$messages = [
-				'type' => 'image',
-				'image'=> $value2
+				'type' => 'String',
+				'String'=> $value2
 				
 			];
 			
