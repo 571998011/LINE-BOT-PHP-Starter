@@ -1,6 +1,26 @@
 <?php
 $access_token = 'tYO69OAFrf1t8TOcRLmVCjqdaMLx3fMXgm4YGlvANWE56EjBjolij67ND422KmII/IXz+YfqhRg9+0vfIHiMsgYsUeHy0H5O6mxOiKbXmXRc3QMfBN2a57IVy/kfJDpT2aWNRtTJ3qMrkQvHcAkb0wdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
+$servername = "ec2-54-243-214-198.compute-1.amazonaws.com";
+$username = "fxujqiwvxjhugr";
+$password = "7eb01f27f07a9bb76a450401c6322a5671325458ba787719ace0d7df498caf36";
+$dbname = "d8hsko3c4c4lhj";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql = "SELECT * FROM lukphorkhunmengrai";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["id"]."<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
