@@ -22,7 +22,7 @@ if (pg_num_rows($result) >= 0) {
     }
 	while($row1 = pg_fetch_row($result2)) {
         echo $row1[0];
-	    $value1 = $row1[0];
+	    $value1 = $row1[0].$row1[1].$row1[2];
     }
 } else {
     echo "0 results";
