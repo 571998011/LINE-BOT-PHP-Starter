@@ -16,7 +16,7 @@ $result = pg_query($conn, $sql);
 $sql2 = "SELECT temp,weathers,pressure FROM server ORDER BY no DESC LIMIT 1;";
 $result2 = pg_query($conn, $sql2);
 
-$sql3 = "SELECT c2image FROM phonebook WHERE lastname='MyPICTURENAME';";
+$sql3 = "SELECT c2image FROM phonebook WHERE lastname='test';";
 $result3 = pg_query($conn, $sql3);
 
 if (pg_num_rows($result) >= 0) {
@@ -30,8 +30,8 @@ if (pg_num_rows($result) >= 0) {
 	    $value1 = "อุณหภูมิ: ".$row1[0]." C"."\n"."สภาพอากาศ: ".$row1[1]."\n"."ความกดอากาศ: ".$row1[2]." pha";
     }
 	while($row3 = pg_fetch_row($result3)) {
-        echo $row3["lastname"];
-	    $value2 = $row3["c2image"];
+        echo pg_unescape_bytea($row3[0]);
+	    $value2 = $row3[0];
     }
 } else {
     echo "0 results";
