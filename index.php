@@ -62,7 +62,7 @@ if (!is_null($events['events'])) {
 					'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
 			];
 			$messages = [
-					'type' => 'text',
+					'type' => 'String',
 					'text' => $value.$value1
 				];
 			
