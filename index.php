@@ -7,6 +7,9 @@ $jsonObj = json_decode($json_string);
 $to = $jsonObj->{"result"}[0]->{"content"}->{"from"};
 $text = $jsonObj->{"result"}[0]->{"content"}->{"text"};
 $text_ex = explode(':', $text);
+$obj = json_decode($result1, true);
+
+$result_text = $val['extract'];
 // Validate parsed JSON data
 $response_format_text = ['contentType'=>1,"toType"=>1,"text"=>$result_text];
 if($text == 'บอกมา'){//คำอื่นๆ ที่ต้องการให้ Bot ตอบกลับเมื่อโพสคำนี้มา เช่นโพสว่า บอกมา ให้ตอบว่า ความลับนะ
