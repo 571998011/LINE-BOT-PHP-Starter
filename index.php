@@ -15,11 +15,10 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			if($messages == 'บอกมา'){//คำอื่นๆ ที่ต้องการให้ Bot ตอบกลับเมื่อโพสคำนี้มา เช่นโพสว่า บอกมา ให้ตอบว่า ความลับนะ
-            $text = ['contentType'=>1,"toType"=>1,"text"=>"ความลับนะ"];
-        }else{//นอกนั้นให้โพส สวัสดี
-            $text = ['contentType'=>1,"toType"=>1,"text"=>"สวัสดี"];
-        }
+			$messages = [
+				'type' => 'text',
+				'text' => "yass"
+			];
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
