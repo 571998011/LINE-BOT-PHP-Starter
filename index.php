@@ -9,7 +9,7 @@ $conn = pg_connect("host='ec2-54-235-181-120.compute-1.amazonaws.com' port='5432
 // Check connection
 $value = "";
 
-$sql = "ความชื้นของดิน"." SELECT humidity_value FROM hardware_info ORDER BY datetime DESC LIMIT 1;"\n"";
+$sql = "ความชื้นของดิน"." SELECT humidity_value FROM hardware_info ORDER BY datetime DESC LIMIT 1;."\n"";
 $result = pg_query($conn, $sql);
 
 $sql1 = "ความชื้นของดิน"." SELECT temp,weathers,pressure FROM server ORDER BY no DESC LIMIT 1;";
