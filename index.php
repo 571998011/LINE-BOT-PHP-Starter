@@ -60,7 +60,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $value.$value1	
 			],
-			$messages = [
+			$messages2 = [
 				'type' => 'image',
 				'image' => $value2
 				];
@@ -71,6 +71,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
+				'messages2' => [$messages2],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
