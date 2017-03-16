@@ -22,4 +22,5 @@ if($text_ex[0] == "อยากรู้"){
         
         $result_text = $val['extract'];
     }
-    echo "OK";
+}
+echo "OK";
