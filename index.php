@@ -58,8 +58,8 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'image',
-				'originalContentUrl'=> 'https://example.com/original.jpg',
-   				 'previewImageUrl'=> 'https://example.com/preview.jpg'
+				'originalContentUrl'=> 'https://www.google.co.th/url?sa=i&rct=j&q=&esrc=s&source=imgres&cd=&cad=rja&uact=8&ved=0ahUKEwi_oICiiNzSAhUKsI8KHfosByQQjRwIBw&url=https%3A%2F%2Freinmanracing.wordpress.com%2F2014%2F03%2F10%2Fback-daz-for-a-good-value-cheltenham-spin%2F&psig=AFQjCNHsIjslyR8Ll7uTRfeuNKcZo8krqw&ust=1489789432547979',
+   				 'previewImageUrl'=> 'https://www.google.co.th/url?sa=i&rct=j&q=&esrc=s&source=imgres&cd=&cad=rja&uact=8&ved=0ahUKEwi_oICiiNzSAhUKsI8KHfosByQQjRwIBw&url=https%3A%2F%2Freinmanracing.wordpress.com%2F2014%2F03%2F10%2Fback-daz-for-a-good-value-cheltenham-spin%2F&psig=AFQjCNHsIjslyR8Ll7uTRfeuNKcZo8krqw&ust=1489789432547979'
 				
 			];
 			
