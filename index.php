@@ -22,7 +22,6 @@ if (pg_num_rows($result) >= 0) {
 }
 
 pg_close($conn);
-<?php
 
 // Get POST body content
 $content = file_get_contents('php://input');
