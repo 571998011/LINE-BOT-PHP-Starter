@@ -19,7 +19,7 @@ $result2 = pg_query($conn, $sql2);
 
 $sql3 = "SELECT c2image FROM phonebook WHERE lastname='test';";
 $result3 = pg_query($conn, $sql3);
-header("Content-type: image/jpg");
+//header("Content-type: image/jpg");
 /*$row2 = pg_fetch_row($result3);
 echo pg_unescape_bytea($row2[0]);
 $value2 = $row2[0];*/
@@ -36,6 +36,7 @@ if (pg_num_rows($result) >= 0) {
     }
 	while($row1 = pg_fetch_row($result3)) {
         echo pg_unescape_bytea($row2[0]);
+		header("Content-type: image/jpg");
 	    $value2 = $row2[0];
     }
 	
