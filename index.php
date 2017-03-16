@@ -59,7 +59,9 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'image',
 				'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
-				'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
+				'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
+				'type' => 'text',
+				'text'=> $value.$value1
 				
 			];
 			
