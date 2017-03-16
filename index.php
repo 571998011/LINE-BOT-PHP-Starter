@@ -14,7 +14,6 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			 $text_ex = explode($text);
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
