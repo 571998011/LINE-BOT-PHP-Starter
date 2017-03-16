@@ -59,7 +59,11 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'text',
 				'text' => $value.$value1	
-			];
+			],
+			$messages = [
+				'type' => 'image',
+				'image' => $value2
+				];
 
 			
 			// Make a POST Request to Messaging API to reply to sender
