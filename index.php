@@ -18,6 +18,7 @@ $result2 = pg_query($conn, $sql2);
 
 $sql3 = "SELECT c2image FROM phonebook WHERE lastname='test';";
 $result3 = pg_query($conn, $sql3);
+header("Content-type: image/jpg");
 
 if (pg_num_rows($result) >= 0) {
     // output data of each row
