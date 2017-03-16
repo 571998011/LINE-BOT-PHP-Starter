@@ -9,7 +9,7 @@ $conn = pg_connect("host='ec2-54-235-181-120.compute-1.amazonaws.com' port='5432
 // Check connection
 $value = "";
 
-$sql = " select * from hardware_info";
+$sql = " SELECT * FROM hardware_info ORDER BY datetime DESC LIMIT 1;";
 $result = pg_query($conn, $sql);
 
 if (pg_num_rows($result) >= 0) {
