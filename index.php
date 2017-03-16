@@ -57,11 +57,6 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			$messages = [
-					'type' => 'image',
-					'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
-					'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
-			];
-			$messages1 = [
 					'type' => 'text',
 					'text' => $value.$value1
 				];
@@ -72,12 +67,7 @@ if (!is_null($events['events'])) {
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
-			$data1 = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages1],
-			];
 			$post = json_encode($data);
-			$post1 = json_encode($data1);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
@@ -85,7 +75,6 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			//curl_setopt($ch, CURLOPT_URL, 'http://api.wunderground.com/api/95287c04f936abda/forecast10day/q/TH/nonthaburi.json'.$text);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post1);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
