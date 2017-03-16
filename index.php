@@ -1,6 +1,6 @@
 <?php
 // make our connection
-$connection = pg_connect("host=ec2-54-243-214-198.compute-1.amazonaws.com dbname=d8hsko3c4c4lhj user=fxujqiwvxjhugr password=7eb01f27f07a9bb76a450401c6322a5671325458ba787719ace0d7df498caf36");
+$connection = pg_connect("host=ec2-54-235-181-120.compute-1.amazonaws.com dbname=dd9sbv2pl3npfu user=zeczwoatxgggff password=2c64a703a8847eeebc479d4a21119d2868fb77d2c637b39e209c4c8088883fee");
 
 // let me know if the connection fails
 if (!$connection) {
@@ -9,7 +9,7 @@ if (!$connection) {
 }
 
 // declare my query and execute
-$myresult = pg_exec($connection, "SELECT * FROM weather");
+$myresult = pg_exec($connection, "SELECT * FROM hardware_info");
 
 // process results
 $myvalue = pg_result($myresult);
