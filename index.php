@@ -8,6 +8,7 @@ error_reporting(0);
 $conn = pg_connect("host='ec2-54-235-181-120.compute-1.amazonaws.com' port='5432' dbname='dd9sbv2pl3npfu' user='zeczwoatxgggff' password='2c64a703a8847eeebc479d4a21119d2868fb77d2c637b39e209c4c8088883fee'");
 // Check connection
 $value = "";
+$value1 = "";
 
 $sql = "SELECT humidity_value FROM hardware_info ORDER BY datetime DESC LIMIT 1;";
 $result = pg_query($conn, $sql);
@@ -21,7 +22,7 @@ if (pg_num_rows($result) >= 0) {
     }
 	while($row1 = pg_fetch_row($result2)) {
         echo $row1[0];
-	    $value += $row1[0];
+	    $value1 = $row1[0];
     }
 } else {
     echo "0 results";
@@ -46,7 +47,8 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $value
+				'text' => $value,
+				'text' => $value1
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
