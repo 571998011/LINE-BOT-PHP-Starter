@@ -12,7 +12,7 @@ if($text_ex[0] == "อยากรู้"){
     $ch1 = curl_init();
     curl_setopt($ch1, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch1, CURLOPT_URL, 'https://th.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles='.$text_ex[1]);
+    curl_setopt($ch1, CURLOPT_URL, 'http://api.wunderground.com/api/Your_Key/conditions/q/CA/San_Francisco.json'.$text_ex[1]);
     $result1 = curl_exec($ch1);
     curl_close($ch1);
     
@@ -22,4 +22,4 @@ if($text_ex[0] == "อยากรู้"){
         
         $result_text = $val['extract'];
     }
-echo "OK";
+    echo "OK";
