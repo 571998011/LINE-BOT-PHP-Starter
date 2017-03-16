@@ -58,8 +58,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'image',
-				'originalContentUrl'=> $value2,
-   				 'previewImageUrl'=> $value2
+				'string'=> $value2
 				
 			];
 			
