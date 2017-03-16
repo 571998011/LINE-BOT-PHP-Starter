@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "http://api.wunderground.com/api/95287c04f936abda/forecast10day/q/TH/nonthaburi.json"
+				'text' => "yass,ahh"
 			];
 			
 			// Make a POST Request to Messaging API to reply to sender
