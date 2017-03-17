@@ -66,7 +66,7 @@ if (!is_null($events['events'])) {
 						'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
 						'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
 					];
-					'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'.'1'
+					'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'.'1';
 				}
 			
 			// Make a POST Request to Messaging API to reply to sender
