@@ -56,11 +56,11 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			if($text=="a"){
+			if($text=="weather"){
 				$messages = [
 					'type' =>'text',
 					'text' => $value.$value1,
-				];}else if($text=="b"){
+				];}else if($text=="photo"){
 					$messages = [
 						'type' => 'image',
 						'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
