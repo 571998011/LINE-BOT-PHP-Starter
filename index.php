@@ -60,13 +60,13 @@ if (!is_null($events['events'])) {
 				$messages = [
 					'type' =>'text',
 					'text' => $value.$value1,
-				];}else if($text=="photo"){
-					header("refresh: 3;");
+				];}else if($text=="photo" ){
 					$messages = [
 						'type' => 'image',
 						'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
 						'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
 					];
+					'previewImageUrl'+1;
 				}
 			
 			// Make a POST Request to Messaging API to reply to sender
