@@ -61,6 +61,7 @@ if (!is_null($events['events'])) {
 					'type' =>'text',
 					'text' => $value.$value1,
 				];}else if($text=="photo"){
+					header("refresh: 3;");
 					$messages = [
 						'type' => 'image',
 						'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
