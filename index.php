@@ -63,8 +63,8 @@ if (!is_null($events['events'])) {
 				];}else if($text=="photo"){
 					$messages = [
 						'type' => 'image',
-						'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
-						'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
+						'originalContentUrl'=> 'https://www.google.co.th/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiekIWI3dzSAhUJro8KHWeSCqUQjRwIBw&url=http%3A%2F%2Fwww.angelfire.com%2Fgames3%2Ftheanime%2Fpilots.html&psig=AFQjCNGMInkUgylNnJsOA_fF18bRZtZN7Q&ust=1489808781803980',
+						'previewImageUrl'=> 'https://www.google.co.th/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiekIWI3dzSAhUJro8KHWeSCqUQjRwIBw&url=http%3A%2F%2Fwww.angelfire.com%2Fgames3%2Ftheanime%2Fpilots.html&psig=AFQjCNGMInkUgylNnJsOA_fF18bRZtZN7Q&ust=1489808781803980'
 					];
 				}
 			
