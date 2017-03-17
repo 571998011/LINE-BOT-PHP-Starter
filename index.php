@@ -63,8 +63,8 @@ if (!is_null($events['events'])) {
 				];}else if($text=="photo"){
 					$messages = [
 						'type' => 'image',
-						'originalContentUrl'=> 'https://www.google.co.th/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiekIWI3dzSAhUJro8KHWeSCqUQjRwIBw&url=http%3A%2F%2Fwww.angelfire.com%2Fgames3%2Ftheanime%2Fpilots.html&psig=AFQjCNGMInkUgylNnJsOA_fF18bRZtZN7Q&ust=1489808781803980',
-						'previewImageUrl'=> 'https://www.google.co.th/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiekIWI3dzSAhUJro8KHWeSCqUQjRwIBw&url=http%3A%2F%2Fwww.angelfire.com%2Fgames3%2Ftheanime%2Fpilots.html&psig=AFQjCNGMInkUgylNnJsOA_fF18bRZtZN7Q&ust=1489808781803980'
+						'originalContentUrl'=> 'https://i.ytimg.com/vi/0WMKJQb1d6o/hqdefault.jpg',
+						'previewImageUrl'=> 'https://i.ytimg.com/vi/0WMKJQb1d6o/hqdefault.jpg'
 					];
 				}
 			
