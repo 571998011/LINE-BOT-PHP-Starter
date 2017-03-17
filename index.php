@@ -62,7 +62,6 @@ if (!is_null($events['events'])) {
 					'text' => $value.$value1,
 				];}else if($text=="Photo" ){
 					$messages = [
-						echo '<script>parent.window.location.reload(true);</script>';
 						'type' => 'image',
 						'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
 						'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
