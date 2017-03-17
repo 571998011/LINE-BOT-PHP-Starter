@@ -17,7 +17,7 @@ $sql2 = "SELECT temp,weathers,pressure FROM server ORDER BY no DESC LIMIT 1;";
 $result2 = pg_query($conn, $sql2);
 
 
-$sql3 = "SELECT img FROM img_info ORDER BY number DESC LIMIT 1;";
+$sql3 = "SELECT c2image FROM img_info ORDER BY number DESC LIMIT 1;";
 $result3 = pg_query($conn, $sql3);
 header("Content-type: image/jpg");
 $row2 = pg_fetch_row($result3);
