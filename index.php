@@ -59,16 +59,19 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' =>'text',
 				'text' => $value.$value1,
-				'type' => 'image',
-				'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
-				'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
+				
 			];
+			$messages1 = [
+				'type' => 'image',
+				'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
+				'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
+				];
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [2],
+				'messages' => [$messages][$messages1],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
