@@ -55,6 +55,7 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			$replyToken1 = $event['replyToken1'];
 			// Build message to reply back
 			$messages = [
 				'type' =>'text',
@@ -72,6 +73,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
+				'replyToken1' => $replyToken1,
 				'messages' => [$messages1]
 			];
 			$post = json_encode($data);
