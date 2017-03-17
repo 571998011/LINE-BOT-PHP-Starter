@@ -63,7 +63,7 @@ if (!is_null($events['events'])) {
 				];}else if($text=="photo"){
 					$messages = [
 						'type' => 'image',
-						'originalContentUrl'=> 'https://i.ytimg.com/vi/0WMKJQb1d6o/hqdefault.jpg',
+						'originalContentUrl'=> '$value2',
 						'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
 					];
 				}
