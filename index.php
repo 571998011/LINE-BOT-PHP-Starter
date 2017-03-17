@@ -56,17 +56,17 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$messages => [
-				{
-				'type' =>'text',
-				'text' => $value.$value1,
-				},
-				{
-				'type' => 'image',
-				'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
-				'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
+			if($text=="a"){
+				$messages = [
+					'type' =>'text',
+					'text' => $value.$value1,
+				];}else if($text=="b"){
+					$messages = [
+						'type' => 'image',
+						'originalContentUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php',
+						'previewImageUrl'=> 'https://dry-woodland-30767.herokuapp.com/index.php'
+					];
 				}
-				];
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
